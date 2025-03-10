@@ -1,0 +1,302 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    user-select: none;
+}
+
+header, section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bg-image {
+    width: 100%;
+    background-image: url('../assets/background/bg.png');
+    height: 100vh;
+}
+
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    filter: blur(10px);
+}
+
+#main {
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+    background-color: rgba(3, 12, 38, 0.75);
+    font-size: 32px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.time-display {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1rem;
+}
+
+.profile-box {
+    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    color: white;
+    max-width: 300px;
+    animation: fadeIn 1s ease-in forwards;
+    width: 300px;
+    height: auto;
+    transition: height 0.5s, width 0.5s, transform 0.5s, box-shadow 0.5s;
+}
+
+.profile-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 2px white;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.75s ease, box-shadow 0.75s ease;
+}
+
+.social-link-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
+    position: relative;
+}
+
+.social-link-icon {
+    font-size: 2.5em;
+    color: white;
+    position: relative;
+}
+
+.social-link-icon:hover {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.discord-icon {
+    position: relative;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: -2px;
+    right: 1.4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-down, .scroll-up {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-down {
+    bottom: 20px;
+}
+
+.scroll-up {
+    top: 20px;
+    opacity: 0;
+}
+
+.scroll-down:hover, .scroll-up:hover {
+    background-color: rgba(0, 0, 0, 1);
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 0 10px 2px white;
+}
+
+.tof-server {
+    margin: 2rem;
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 400px;
+    height: 700px;
+    overflow: auto;
+    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 0 2rem 0 2rem;
+    text-align: left;
+    font-size: 1rem;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.tof-server::-webkit-scrollbar {
+    display: none;
+}
+
+.tof-server:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 2px white;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.steam-workshop {
+    margin: 2rem;
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 400px;
+    height: 18em;
+    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+    font-size: 1rem;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.steam-workshop:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 2px white;
+}
+
+.workshop-item img {
+    width: 50%;
+    height: 50%;
+}
+
+.workshop-item {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    display: none;
+}
+
+.workshop-item p {
+    color: white;
+    text-decoration: none;
+}
+
+.workshop-item.show {
+    opacity: 1;
+    display: block;
+}
+
+.workshop-item a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.workshop-item a:hover {
+    text-decoration: underline;
+}
+
+.project {
+    margin: 2rem;
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 400px;
+    height: max-content;
+    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+    font-size: 1rem;
+    transition: all 0.5s, box-shadow 0.5s;
+}
+
+.project:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 2px white;
+}
+
+.tofgm-public, .tof-vortex-extension {
+    color: white;
+    text-align: left;
+    text-decoration: none;
+}
+
+.tofgm-public ul {
+    list-style-type: disc;
+}
+
+.social-link-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
+    position: relative;
+}
+
+.tofvortex-icon, .tofgm-icon {
+    font-size: 2.5em;
+    color: white;
+    position: relative;
+}
+
+.tofvortex-icon:hover, .tofgm-icon:hover {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.download-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
