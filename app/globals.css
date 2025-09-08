@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Alibaba Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/alibaba-sans/AlibabaSans-Light.woff2') format('woff2'),
+       url('/alibaba-sans/AlibabaSans-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Alibaba Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/alibaba-sans/AlibabaSans-Regular.woff2') format('woff2'),
+       url('/alibaba-sans/AlibabaSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Alibaba Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/alibaba-sans/AlibabaSans-Medium.woff2') format('woff2'),
+       url('/alibaba-sans/AlibabaSans-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Alibaba Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/alibaba-sans/AlibabaSans-Bold.woff2') format('woff2'),
+       url('/alibaba-sans/AlibabaSans-Bold.woff') format('woff');
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { 
+    transform: scale(0.95); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeScaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes scaleOut {
+  from { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  to { 
+    transform: scale(0.95); 
+    opacity: 0; 
+  }
+}
+
+@keyframes fadeScaleOut {
+  from { 
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to { 
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+}
+
+@keyframes backdropFadeOut {
+  from { 
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+  }
+  to { 
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from { 
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+  to { 
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-alibaba: 'Alibaba Sans', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-alibaba);
+  --font-mono: monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-alibaba);
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.scrollbar-thin {
+  scrollbar-width: 1rem;
+  scrollbar-color: #ffffff rgba(55, 65, 81, 0.4);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.4);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(8, 145, 178, 0.6);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(8, 145, 178, 0.8);
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.2s ease-in forwards;
+}
+
+.animate-scale-out {
+  animation: scaleOut 0.2s ease-in forwards;
+}
+
+.animate-fade-scale-out {
+  animation: fadeScaleOut 0.2s ease-in forwards;
+}
+
+.animate-backdrop-out {
+  animation: backdropFadeOut 0.2s ease-in forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.animate-fade-scale-in {
+  animation: fadeScaleIn 0.3s ease-out forwards;
+}
+
+.animate-backdrop-in {
+  animation: backdropFadeIn 0.3s ease-out forwards;
+}
